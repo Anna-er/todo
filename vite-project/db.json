@@ -1,0 +1,34 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "text": "Eat",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "text": "Code",
+      "completed": true
+    },
+    {
+      "id": 3,
+      "text": "Sleep",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "text": "Repeat",
+      "completed": false
+    },
+    {
+      "text": "Посмотреть про SSR",
+      "completed": false,
+      "id": 5
+    },
+    {
+      "text": "Прикрутить SSR",
+      "completed": false,
+      "id": 6
+    }
+  ]
+}
