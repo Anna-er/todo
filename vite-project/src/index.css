@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #dfeefb;
+  font-family: "Montserrat", sans-serif;
+  word-break: break-word;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.main-container {
+  margin-top: 70px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.input-text {
+  height: 45px;
+  width: 175px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-left: 10px;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.list {
+  margin-top: 15px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.remove-button {
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  background-color: #c7003800;
+  color: #00000000;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 10px;
+  margin-left: 10px;
+  border-color: #c7003800;
+  cursor: pointer;
+}
+
+.items:hover .remove-button {
+  background-color: #c70039;
+  color: #ffffff;
+  border-color: #c70039;
+}
+
+button {
+  height: 40px;
+  width: 70px;
+  background-color: #c70039;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  border-color: #c70039;
+  margin-top: 10px;
+  cursor: pointer;
+}
