@@ -11,24 +11,14 @@
       "completed": true
     },
     {
-      "id": 3,
       "text": "Sleep",
-      "completed": false
+      "completed": false,
+      "id": 3
     },
     {
-      "id": 4,
       "text": "Repeat",
-      "completed": false
-    },
-    {
-      "text": "Посмотреть про SSR",
       "completed": false,
-      "id": 5
-    },
-    {
-      "text": "Прикрутить SSR",
-      "completed": false,
-      "id": 6
+      "id": 4
     }
   ]
 }
