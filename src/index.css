@@ -12,8 +12,7 @@
 }
 
 .main-container {
-  margin-top: 70px;
-  margin-bottom: 30px;
+  margin: 70px 0 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,13 +42,13 @@
   height: 20px;
   width: 20px;
   text-align: center;
-  background-color: #c7003800;
-  color: #00000000;
+  border: none;
+  background: none;
+  color: transparent;
   font-size: 13px;
   font-weight: 500;
   border-radius: 10px;
   margin-left: 10px;
-  border-color: #c7003800;
   cursor: pointer;
 }
 
