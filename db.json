@@ -1,14 +1,14 @@
 {
   "todos": [
     {
-      "id": 1,
       "text": "Eat",
-      "completed": true
+      "completed": true,
+      "id": 1
     },
     {
-      "id": 2,
       "text": "Code",
-      "completed": true
+      "completed": true,
+      "id": 2
     },
     {
       "text": "Sleep",
