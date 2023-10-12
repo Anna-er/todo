@@ -1,7 +1,7 @@
 import { useState, useEffect, FC } from 'react';
 
 
-const TODO_LIST_ENDPOINT = 'http://localhost:3000/todos/'
+const TODO_LIST_ENDPOINT = 'http://localhost:8000/todos/'
 
 
 interface item {
