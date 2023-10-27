@@ -1,5 +1,6 @@
-import { useState, useEffect, FC } from 'react';
-
+import Head from 'next/head';
+import { useState } from 'react';
+import { GetServerSideProps, NextPage } from 'next';
 
 const TODO_LIST_ENDPOINT = 'http://localhost:3000/todos/'
 
@@ -10,25 +11,27 @@ interface item {
     completed: boolean;
 }
 
+export const getServerSideProps: GetServerSideProps<{ todolist: item[] }> = async (context) => {
+    const res = await fetch('http://localhost:3000/todos');
+    const data = await res.json();
 
-export const TodoList: React.FC = () => {
-    const [todos, setTodos] = useState<item[]>([]);
+    return { props: { todolist: data } }
+
+}
+
+interface TodosProps {
+    todolist: item[]
+}
+
+const TodoList: NextPage<TodosProps> = ({ todolist }) => {
+    const [todos, setTodos] = useState(todolist);
 
     const [newTodoText, setNewTodoText] = useState("");
 
-    useEffect(() => {
-        fetch(TODO_LIST_ENDPOINT)
-            .then(res => {
-                return res.json()
-            })
-            .then(data => {
-                setTodos(data);
-            })
-    }, []);
 
     const handleToggle = (id: number) => {
         setTodos(
-            todos.map((todo) => {
+            todos?.map((todo) => {
                 if (todo.id === id) {
                     const updatedTodo = { ...todo, completed: !todo.completed };
                     fetch(TODO_LIST_ENDPOINT + id.toString(), {
@@ -57,7 +60,7 @@ export const TodoList: React.FC = () => {
             }).then(
                 response => response.json()
             ).then(
-                data => setTodos(todos.concat(data))
+                data => setTodos(todos?.concat(data))
             );
 
             setNewTodoText("");
@@ -70,19 +73,22 @@ export const TodoList: React.FC = () => {
             method: 'DELETE'
         }).then(r => {
             if (r.ok) {
-                const newTodos = todos.filter(todo => todo.id !== id);
+                const newTodos = todos?.filter(todo => todo.id !== id);
                 setTodos(newTodos);
             }
         })
     }
 
 
-
     return (
         <div className="main-container">
+            <Head>
+                <title>Todo List</title>
+                <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+            </Head>
             <h1>Todo List</h1>
             <div className="list">
-                {todos.map((todo) => (
+                {todos?.map((todo) => (
                     <div className="item"
                         key={todo.id}
                         style={{ textDecoration: todo.completed ? "line-through" : "none", color: todo.completed ? "#8E8E8E" : "#000000" }}
@@ -100,3 +106,5 @@ export const TodoList: React.FC = () => {
         </div>
     );
 }
+
+export default TodoList
